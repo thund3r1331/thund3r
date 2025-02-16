@@ -75,6 +75,9 @@
 
       document.getElementById(selectedCategory).style.display = 'block';
     }
+
+    const lang = detectBrowserLanguage();
+    loadTranslations(lang);
   </script>
 </body>
 </html>
