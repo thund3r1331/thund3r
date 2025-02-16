@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Language detection and translation
   const lang = detectBrowserLanguage();
   loadTranslations(lang);
+
+  document.getElementById('lang-en').addEventListener('click', () => loadTranslations('en'));
+  document.getElementById('lang-ru').addEventListener('click', () => loadTranslations('ru'));
 });
 
 function detectBrowserLanguage() {
