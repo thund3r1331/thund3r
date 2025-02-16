@@ -13,6 +13,9 @@ body {
 header {
   background: #333;
   padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,6 +39,25 @@ header {
 .tab-button:hover {
   color: #ffce00;
   transform: scale(1.1);
+}
+
+.language-switcher {
+  display: flex;
+  gap: 10px;
+}
+
+.language-switcher button {
+  background: none;
+  border: 1px solid #ffce00;
+  color: #ffce00;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.language-switcher button:hover {
+  background: #ffce00;
+  color: #333;
 }
 
 main {
