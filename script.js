@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabContents = document.querySelectorAll(".tab-content");
   const sliderTab = document.querySelector(".slider-tab");
+  
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
       tabButtons.forEach((btn) => btn.classList.remove("active"));
@@ -10,8 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById(button.getAttribute("data-tab")).classList.add("active");
     });
   });
+
   const lang = detectBrowserLanguage();
   loadTranslations(lang);
+
   document.querySelectorAll('input[name="language"]').forEach((input) => {
     input.addEventListener('change', (event) => {
       sliderTab.style.left = event.target.id === 'lang-en' ? '0' : '50%';
@@ -19,10 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
 function detectBrowserLanguage() {
   const lang = navigator.language || navigator.userLanguage;
   return lang.split('-')[0];
 }
+
 async function loadTranslations(language) {
   try {
     const response = await fetch(`/locales/${language}.json`);
@@ -33,6 +38,7 @@ async function loadTranslations(language) {
     console.error('Error loading translations:', error);
   }
 }
+
 function applyTranslations(translations) {
   document.title = translations.title;
   document.querySelector('h2#skills').textContent = translations.skills;
