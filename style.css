@@ -3,13 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
   color: #fff;
 }
-
 header {
   background: #333;
   padding: 10px 20px;
@@ -18,13 +16,11 @@ header {
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .tabs {
   display: flex;
   justify-content: center;
   gap: 20px;
 }
-
 .tab-button {
   background: none;
   border: none;
@@ -34,49 +30,66 @@ header {
   padding: 10px;
   transition: color 0.3s, transform 0.3s;
 }
-
 .tab-button.active,
 .tab-button:hover {
   color: #ffce00;
   transform: scale(1.1);
 }
-
 .language-switcher {
   display: flex;
   gap: 10px;
 }
-
-.language-switcher button {
-  background: none;
-  border: 1px solid #ffce00;
-  color: #ffce00;
-  padding: 5px 10px;
+.language-switcher .slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #444;
+  border-radius: 20px;
+  padding: 5px;
+  width: 120px;
+  justify-content: space-between;
+}
+.language-switcher input[type="radio"] {
+  display: none;
+}
+.language-switcher label {
+  z-index: 1;
+  flex: 1;
+  text-align: center;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  color: #ffce00;
+  transition: color 0.3s;
 }
-
-.language-switcher button:hover {
+.language-switcher .slider-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 20px;
   background: #ffce00;
-  color: #333;
+  transition: left 0.3s;
 }
-
+#lang-en:checked ~ .slider-tab {
+  left: 0;
+}
+#lang-ru:checked ~ .slider-tab {
+  left: 50%;
+}
 main {
   padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .tab-content {
   display: none;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
-
 .tab-content.active {
   display: block;
   opacity: 1;
 }
-
 .skill-category h3 {
   background: #444;
   display: inline-block;
@@ -86,19 +99,16 @@ main {
   color: #ffce00;
   animation: fadeIn 1s ease-in-out;
 }
-
 .skill-bar {
   margin: 10px 0;
   animation: slideIn 1s ease-in-out;
 }
-
 .skill-bar span {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
   color: #ffce00;
 }
-
 .bar {
   background: #555;
   height: 20px;
@@ -106,13 +116,11 @@ main {
   border: 2px solid #ffce00;
   border-radius: 10px;
 }
-
 .progress {
   background: #ffce00;
   height: 100%;
   border-radius: 10px;
 }
-
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -120,7 +128,6 @@ main {
   margin-top: 20px;
   animation: fadeIn 1s ease-in-out;
 }
-
 .portfolio-item {
   background: #444;
   border-radius: 8px;
@@ -130,39 +137,32 @@ main {
   animation: fadeIn 1s ease-in-out;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
 .portfolio-item img {
   width: 100%;
   height: auto;
   display: block;
 }
-
 .portfolio-item:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
-
 .contact-list {
   list-style: none;
   margin-top: 10px;
   line-height: 1.6;
   animation: fadeIn 1s ease-in-out;
 }
-
 .contact-list li {
   margin: 5px 0;
 }
-
 .contact-list a {
   color: #ffce00;
   text-decoration: none;
   transition: text-decoration 0.3s;
 }
-
 contact-list a:hover {
   text-decoration: underline;
 }
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -171,7 +171,6 @@ contact-list a:hover {
     opacity: 1;
   }
 }
-
 @keyframes slideIn {
   from {
     transform: translateX(-100%);
