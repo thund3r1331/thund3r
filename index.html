@@ -14,12 +14,16 @@
       <button class="tab-button" data-tab="portfolio">Портфолио</button>
       <button class="tab-button" data-tab="contact">Контакты</button>
       <div class="language-switcher">
-        <button id="lang-en">EN</button>
-        <button id="lang-ru">RU</button>
+        <div class="slider">
+          <input type="radio" name="language" id="lang-en" value="en">
+          <label for="lang-en">EN</label>
+          <input type="radio" name="language" id="lang-ru" value="ru" checked>
+          <label for="lang-ru">RU</label>
+          <div class="slider-tab"></div>
+        </div>
       </div>
     </nav>
   </header>
-
   <main>
     <section id="skills" class="tab-content active">
       <h2>Навыки</h2>
@@ -31,7 +35,6 @@
         <div class="skill-bar"><span>Aseprite</span><div class="bar"><div class="progress" style="width: 25%;"></div></div></div>
       </div>
     </section>
-
     <section id="portfolio" class="tab-content">
       <h2>Портфолио</h2>
       <div class="portfolio-grid">
@@ -39,7 +42,6 @@
         <div class="portfolio-item"><img src="model2.png" alt="Модель 2"><p>Модель 2</p></div>
       </div>
     </section>
-
     <section id="contact" class="tab-content">
       <h2>Контакты</h2>
       <ul class="contact-list">
@@ -48,12 +50,10 @@
       </ul>
     </section>
   </main>
-
   <script src="script.js"></script>
   <script>
     const lang = detectBrowserLanguage();
     loadTranslations(lang);
-    
     document.getElementById('lang-en').addEventListener('click', () => loadTranslations('en'));
     document.getElementById('lang-ru').addEventListener('click', () => loadTranslations('ru'));
   </script>
