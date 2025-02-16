@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabContents = document.querySelectorAll(".tab-content");
+  const sliderTab = document.querySelector(".slider-tab");
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
       tabButtons.forEach((btn) => btn.classList.remove("active"));
@@ -13,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadTranslations(lang);
   document.querySelectorAll('input[name="language"]').forEach((input) => {
     input.addEventListener('change', (event) => {
+      sliderTab.style.left = event.target.id === 'lang-en' ? '0' : '50%';
       loadTranslations(event.target.value);
     });
   });
