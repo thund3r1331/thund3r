@@ -125,3 +125,20 @@ main {
 .contact-list a:hover {
   text-decoration: underline;
 }
+
+/* Hide the arrow from the dropdown */
+#skill-category-dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5H7z" fill="rgba(0, 0, 0, 0.54)"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+  padding-right: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #000;
+  background-color: #fff;
+}
