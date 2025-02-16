@@ -1,30 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabButtons = document.querySelectorAll(".tab-button");
   const tabContents = document.querySelectorAll(".tab-content");
-
   tabButtons.forEach((button) => {
     button.addEventListener("click", () => {
       tabButtons.forEach((btn) => btn.classList.remove("active"));
       tabContents.forEach((content) => content.classList.remove("active"));
-
       button.classList.add("active");
       document.getElementById(button.getAttribute("data-tab")).classList.add("active");
     });
   });
-
-  // Language detection and translation
   const lang = detectBrowserLanguage();
   loadTranslations(lang);
-
-  document.getElementById('lang-en').addEventListener('click', () => loadTranslations('en'));
-  document.getElementById('lang-ru').addEventListener('click', () => loadTranslations('ru'));
+  document.querySelectorAll('input[name="language"]').forEach((input) => {
+    input.addEventListener('change', (event) => {
+      loadTranslations(event.target.value);
+    });
+  });
 });
-
 function detectBrowserLanguage() {
   const lang = navigator.language || navigator.userLanguage;
-  return lang.split('-')[0]; // e.g., 'en' from 'en-US'
+  return lang.split('-')[0];
 }
-
 async function loadTranslations(language) {
   try {
     const response = await fetch(`/locales/${language}.json`);
@@ -35,7 +31,6 @@ async function loadTranslations(language) {
     console.error('Error loading translations:', error);
   }
 }
-
 function applyTranslations(translations) {
   document.title = translations.title;
   document.querySelector('h2#skills').textContent = translations.skills;
