@@ -18,13 +18,7 @@
   <main>
     <section id="skills" class="tab-content active">
       <h2>Навыки</h2>
-      <!-- Dropdown to select skill categories -->
-      <select id="skill-category-dropdown" onchange="updateSkillCategory()">
-        <option value="best-known-tools">Best Known Tools</option>
-        <option value="all-applications">All Applications Worked On</option>
-        <option value="best-skills">Best Skills</option>
-      </select>
-
+      
       <!-- Skill categories -->
       <div class="skill-category" id="best-known-tools">
         <h3>Best Known Tools</h3>
@@ -64,18 +58,6 @@
 
   <script src="script.js"></script>
   <script>
-    function updateSkillCategory() {
-      var dropdown = document.getElementById('skill-category-dropdown');
-      var selectedCategory = dropdown.value;
-
-      var categories = document.getElementsByClassName('skill-category');
-      for (var i = 0; i < categories.length; i++) {
-        categories[i].style.display = 'none';
-      }
-
-      document.getElementById(selectedCategory).style.display = 'block';
-    }
-
     const lang = detectBrowserLanguage();
     loadTranslations(lang);
   </script>
