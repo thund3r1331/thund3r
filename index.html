@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Портфолио моделей</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -12,53 +12,44 @@
       <button class="tab-button active" data-tab="skills">Навыки</button>
       <button class="tab-button" data-tab="portfolio">Портфолио</button>
       <button class="tab-button" data-tab="about">Обо мне</button>
+      <button class="tab-button" data-tab="contact">Контакты</button>
     </nav>
   </header>
 
   <main>
-    <!-- Раздел "Навыки" -->
     <section id="skills" class="tab-content active">
       <h2>Навыки</h2>
-      <div class="skills-list">
-        <div class="skill">
-          <h3>3D Моделирование</h3>
-          <p>Опыт работы в Blender и BlockBench.</p>
-        </div>
-        <div class="skill">
-          <h3>Графический Дизайн</h3>
-          <p>Уверенное владение Photoshop и Aseprite.</p>
-        </div>
-        <div class="skill">
-          <h3>Анимация</h3>
-          <p>BlockBench</p>
-        </div>
+      <div class="skill-category">
+        <h3>Best Known Tools</h3>
+        <div class="skill-bar"><span>Blender</span><div class="bar"><div class="progress" style="width: 90%;"></div></div></div>
+        <div class="skill-bar"><span>Krita</span><div class="bar"><div class="progress" style="width: 80%;"></div></div></div>
+        <div class="skill-bar"><span>Affinity Designer</span><div class="bar"><div class="progress" style="width: 75%;"></div></div></div>
+        <div class="skill-bar"><span>Photoshop</span><div class="bar"><div class="progress" style="width: 70%;"></div></div></div>
+        <div class="skill-bar"><span>Illustrator</span><div class="bar"><div class="progress" style="width: 70%;"></div></div></div>
+        <div class="skill-bar"><span>Python</span><div class="bar"><div class="progress" style="width: 60%;"></div></div></div>
+        <div class="skill-bar"><span>GDScript</span><div class="bar"><div class="progress" style="width: 60%;"></div></div></div>
       </div>
     </section>
 
-    <!-- Раздел "Портфолио" -->
     <section id="portfolio" class="tab-content">
-      <h2>Портфолио моделей</h2>
+      <h2>Портфолио</h2>
       <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="model1.jpg" alt="Модель 1" />
-          <p>Модель 1</p>
-        </div>
-        <div class="portfolio-item">
-          <img src="model2.jpg" alt="Модель 2" />
-          <p>Модель 2</p>
-        </div>
-        <div class="portfolio-item">
-          <img src="model3.jpg" alt="Модель 3" />
-          <p>Модель 3</p>
-        </div>
-        <!-- Добавьте больше элементов по необходимости -->
+        <div class="portfolio-item"><img src="model1.jpg" alt="Модель 1"><p>Модель 1</p></div>
+        <div class="portfolio-item"><img src="model2.jpg" alt="Модель 2"><p>Модель 2</p></div>
       </div>
     </section>
 
-    <!-- Раздел "Обо мне" -->
     <section id="about" class="tab-content">
       <h2>Обо мне</h2>
-      <p>Инфа.</p>
+      <p>Информация обо мне.</p>
+    </section>
+
+    <section id="contact" class="tab-content">
+      <h2>Контакты</h2>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:example@example.com">example@example.com</a></li>
+        <li>Telegram: <a href="#">@username</a></li>
+      </ul>
     </section>
   </main>
 
