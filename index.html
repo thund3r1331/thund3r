@@ -18,12 +18,30 @@
   <main>
     <section id="skills" class="tab-content active">
       <h2>Навыки</h2>
-      <div class="skill-category">
+      <!-- Dropdown to select skill categories -->
+      <select id="skill-category-dropdown" onchange="updateSkillCategory()">
+        <option value="best-known-tools">Best Known Tools</option>
+        <option value="all-applications">All Applications Worked On</option>
+        <option value="best-skills">Best Skills</option>
+      </select>
+
+      <!-- Skill categories -->
+      <div class="skill-category" id="best-known-tools">
         <h3>Best Known Tools</h3>
         <div class="skill-bar"><span>Blender</span><div class="bar"><div class="progress" style="width: 30%;"></div></div></div>
         <div class="skill-bar"><span>Photoshop</span><div class="bar"><div class="progress" style="width: 70%;"></div></div></div>
         <div class="skill-bar"><span>Blockbench</span><div class="bar"><div class="progress" style="width: 90%;"></div></div></div>
         <div class="skill-bar"><span>Aseprite</span><div class="bar"><div class="progress" style="width: 25%;"></div></div></div>
+      </div>
+
+      <div class="skill-category" id="all-applications" style="display: none;">
+        <h3>All Applications Worked On</h3>
+        <!-- Add your additional skills here -->
+      </div>
+
+      <div class="skill-category" id="best-skills" style="display: none;">
+        <h3>Best Skills</h3>
+        <!-- Add your best skills here -->
       </div>
     </section>
 
@@ -45,5 +63,18 @@
   </main>
 
   <script src="script.js"></script>
+  <script>
+    function updateSkillCategory() {
+      var dropdown = document.getElementById('skill-category-dropdown');
+      var selectedCategory = dropdown.value;
+
+      var categories = document.getElementsByClassName('skill-category');
+      for (var i = 0; i < categories.length; i++) {
+        categories[i].style.display = 'none';
+      }
+
+      document.getElementById(selectedCategory).style.display = 'block';
+    }
+  </script>
 </body>
 </html>
