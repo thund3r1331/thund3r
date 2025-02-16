@@ -5,14 +5,15 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c 0%, #928dab 100%);
   color: #fff;
 }
 
 header {
-  background: #222;
+  background: #333;
   padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .tabs {
@@ -28,12 +29,13 @@ header {
   font-size: 1.1em;
   cursor: pointer;
   padding: 10px;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .tab-button.active,
 .tab-button:hover {
   color: #ffce00;
+  transform: scale(1.1);
 }
 
 main {
@@ -54,7 +56,7 @@ main {
 }
 
 .skill-category h3 {
-  background: #333;
+  background: #444;
   display: inline-block;
   padding: 8px 15px;
   margin-bottom: 15px;
@@ -76,15 +78,17 @@ main {
 }
 
 .bar {
-  background: #333;
+  background: #555;
   height: 20px;
   position: relative;
   border: 2px solid #ffce00;
+  border-radius: 10px;
 }
 
 .progress {
   background: #ffce00;
   height: 100%;
+  border-radius: 10px;
 }
 
 .portfolio-grid {
@@ -96,12 +100,13 @@ main {
 }
 
 .portfolio-item {
-  background: #222;
+  background: #444;
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
   text-align: center;
   animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
@@ -112,6 +117,7 @@ main {
 
 .portfolio-item:hover {
   transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .contact-list {
@@ -128,6 +134,7 @@ main {
 .contact-list a {
   color: #ffce00;
   text-decoration: none;
+  transition: text-decoration 0.3s;
 }
 
 contact-list a:hover {
