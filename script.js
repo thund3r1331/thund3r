@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tabContents.forEach((content) => content.classList.remove("active"));
 
       button.classList.add("active");
-      const tabId = button.getAttribute("data-tab");
-      document.getElementById(tabId).classList.add("active");
+      document.getElementById(button.getAttribute("data-tab")).classList.add("active");
     });
   });
 });
