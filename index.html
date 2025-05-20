@@ -1,61 +1,360 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфолио</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+.main-header {
+    background-color: #333;
+    color: white;
+    padding: 5px 0; 
+    font-family: "JetBrains Mono", monospace;
+    width: 80%; 
+    margin: 0 auto; 
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: color 0.3s ease; 
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ccc; 
+    text-decoration: none; 
+    background-color: transparent;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.language-switcher {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-link {
+    color: white;
+    text-decoration: none;
+}
+
+.lang-link:hover, .lang-link.active {
+    color: #ccc; 
+    text-decoration: none; 
+}
+</style>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Портфолио</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jetbrains-mono/2.242/web/jetbrains-mono.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 </head>
 <body>
-  <header>
-    <nav class="tabs">
-      <button class="tab-button active" data-tab="skills">Навыки</button>
-      <button class="tab-button" data-tab="portfolio">Портфолио</button>
-      <button class="tab-button" data-tab="contact">Контакты</button>
-      <div class="language-switcher">
-        <div class="slider">
-          <input type="radio" name="language" id="lang-en" value="en">
-          <label for="lang-en">EN</label>
-          <input type="radio" name="language" id="lang-ru" value="ru" checked>
-          <label for="lang-ru">RU</label>
-          <div class="slider-tab"></div>
-        </div>
+<div id="shader-background"></div>
+<div class="overlay"></div>
+<header class="main-header">
+<div class="header-container">
+<div class="logo">
+<a href="#">thund3r</a>
+</div>
+<nav class="main-nav">
+<a class="nav-link active" data-tab="skills" href="#skills" data-lang-key="skills">Навыки</a>
+<a class="nav-link" data-tab="portfolio" href="#portfolio" data-lang-key="portfolio">Портфолио</a>
+<a class="nav-link" data-tab="contact" href="#contact" data-lang-key="contact">Контакты</a>
+</nav>
+<div class="header-right">
+<div class="language-switcher">
+<a class="lang-link" data-lang="en" href="#">EN</a>
+<a class="lang-link active" data-lang="ru" href="#">RU</a>
+</div>
+</div>
+</div>
+</header>
+<div class="container">
+<main>
+<section class="tab-content active" id="skills">
+<h2 class="section-title" data-lang-key="skills-title">Навыки</h2>
+<div class="skills-grid">
+<div class="skill-card">
+<div class="skill-circle-container">
+<div class="skill-circle">
+<svg height="120" viewbox="0 0 120 120" width="120">
+<circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+<circle class="skill-circle-progress" cx="60" cy="60" r="54" style="--percent: 30"></circle>
+</svg>
+<div class="skill-percentage">30%</div>
+</div>
+</div>
+<div class="skill-info">
+<h3>Blender</h3>
+<p data-lang-key="blender-desc">3D моделирование и анимация</p>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-circle-container">
+<div class="skill-circle">
+<svg height="120" viewbox="0 0 120 120" width="120">
+<circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+<circle class="skill-circle-progress" cx="60" cy="60" r="54" style="--percent: 70"></circle>
+</svg>
+<div class="skill-percentage">70%</div>
+</div>
+</div>
+<div class="skill-info">
+<h3>Photoshop</h3>
+<p data-lang-key="photoshop-desc">Редактирование изображений</p>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-circle-container">
+<div class="skill-circle">
+<svg height="120" viewbox="0 0 120 120" width="120">
+<circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+<circle class="skill-circle-progress" cx="60" cy="60" r="54" style="--percent: 90"></circle>
+</svg>
+<div class="skill-percentage">90%</div>
+</div>
+</div>
+<div class="skill-info">
+<h3>Blockbench</h3>
+<p data-lang-key="blockbench-desc">Создание 3D моделей</p>
+</div>
+</div>
+<div class="skill-card">
+<div class="skill-circle-container">
+<div class="skill-circle">
+<svg height="120" viewbox="0 0 120 120" width="120">
+<circle class="skill-circle-bg" cx="60" cy="60" r="54"></circle>
+<circle class="skill-circle-progress" cx="60" cy="60" r="54" style="--percent: 25"></circle>
+</svg>
+<div class="skill-percentage">25%</div>
+</div>
+</div>
+<div class="skill-info">
+<h3>Aseprite</h3>
+<p data-lang-key="aseprite-desc">Пиксель-арт и анимация</p>
+</div>
+</div>
+</div>
+<div class="tech-stats">
+<div class="software-badges">
+<div class="software-badge">
+<div class="software-icon blender-icon">
+<i class="fas fa-cube"></i>
+</div>
+<span>Blender</span>
+</div>
+<div class="software-badge">
+<div class="software-icon photoshop-icon">
+<i class="fas fa-paint-brush"></i>
+</div>
+<span>Photoshop</span>
+</div>
+<div class="software-badge">
+<div class="software-icon blockbench-icon">
+<i class="fas fa-cubes"></i>
+</div>
+<span>Blockbench</span>
+</div>
+<div class="software-badge">
+<div class="software-icon aseprite-icon">
+<i class="fas fa-pencil-alt"></i>
+</div>
+<span>Aseprite</span>
+</div>
+</div>
+</div>
+</section>
+<section class="tab-content" id="portfolio">
+<h2 class="section-title" data-lang-key="portfolio-title">Портфолио</h2>
+<div class="portfolio-grid">
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Модель 1" src="assets/1.png"/>
+<div class="portfolio-overlay">
+<div class="overlay-content">
+<h3 data-lang-key="work1-title">Работа 1</h3>
+<p data-lang-key="work1-desc">3D моделированная голова</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Модель 2" src="assets/2.png"/>
+<div class="portfolio-overlay">
+<div class="overlay-content">
+<h3 data-lang-key="work2-title">Работа 2</h3>
+<p data-lang-key="work2-desc">3D моделированная голова</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Арт 1" src="assets/3.png"/>
+<div class="portfolio-overlay">
+<div class="overlay-content">
+<h3 data-lang-key="work3-title">Работа 3</h3>
+<p data-lang-key="work3-desc">3D моделированная голова</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Модель 3" src="assets/4.png"/>
+<div class="portfolio-overlay">
+<div class="overlay-content">
+<h3 data-lang-key="work4-title">Работа 4</h3>
+<p data-lang-key="work4-desc">Низкополигональная модель (не завершена)</p>
+</div>
+</div>
+</div>
+</div>
+<div class="portfolio-item">
+<div class="portfolio-image">
+<img alt="Модель 5" src="assets/5.png"/>
+<div class="portfolio-overlay">
+<div class="overlay-content">
+<h3 data-lang-key="work5-title">Работа 5</h3>
+<p data-lang-key="work5-desc">3D моделированная голова</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="tab-content" id="contact">
+<h2 class="section-title" data-lang-key="contact-title">Контакты</h2>
+<div class="contact-container">
+<div class="contact-card">
+<div class="contact-icon">
+<i class="fas fa-envelope"></i>
+</div>
+<h3 data-lang-key="email-title">Email</h3>
+<a href="mailto:thundr116@gmail.com">thundr116@gmail.com</a>
+</div>
+<div class="contact-card">
+<div class="contact-icon">
+<i class="fab fa-telegram"></i>
+</div>
+<h3 data-lang-key="telegram-title">Telegram</h3>
+<a href="https://t.me/thund3r1331" target="_blank">@thund3r1331</a>
+</div>
+<div class="contact-card">
+<div class="contact-icon">
+<i class="fab fa-github"></i>
+</div>
+<h3 data-lang-key="github-title">GitHub</h3>
+<a href="https://github.com/thund3r1331" target="_blank">GitHub Profile</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="social-links">
+<a class="social-link" href="https://discord.gg/knCjnEN2nx target="_blank"><i class="fab fa-discord"></i></a>
+<a class="social-link" href="https://github.com/librry1337" target="_blank"><i class="fab fa-github"></i></a>
+<a class="social-link" href="https://t.me/qOlNrV" target="_blank"><i class="fab fa-telegram"></i></a>
+</div>
+<div class="copyright">
+        © powered by hiraeth.tech
       </div>
-    </nav>
-  </header>
-  <main>
-    <section id="skills" class="tab-content active">
-      <h2>Навыки</h2>
-      <div class="skill-category" id="best-known-tools">
-        <h3>Best Known Tools</h3>
-        <div class="skill-bar"><span>Blender</span><div class="bar"><div class="progress" style="width: 30%;"></div></div></div>
-        <div class="skill-bar"><span>Photoshop</span><div class="bar"><div class="progress" style="width: 70%;"></div></div></div>
-        <div class="skill-bar"><span>Blockbench</span><div class="bar"><div class="progress" style="width: 90%;"></div></div></div>
-        <div class="skill-bar"><span>Aseprite</span><div class="bar"><div class="progress" style="width: 25%;"></div></div></div>
-      </div>
-    </section>
-    <section id="portfolio" class="tab-content">
-      <h2>Портфолио</h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-item"><img src="untitled22.png" alt="Модель 1"><p>Модель 1</p></div>
-        <div class="portfolio-item"><img src="model2.png" alt="Модель 2"><p>Модель 2</p></div>
-      </div>
-    </section>
-    <section id="contact" class="tab-content">
-      <h2>Контакты</h2>
-      <ul class="contact-list">
-        <li>Email: <a href="mailto:thundr116@gmail.com">thundr116@gmail.com</a></li>
-        <li>Telegram: <a href="#">@thund3r1331</a></li>
-      </ul>
-    </section>
-  </main>
-  <script src="script.js"></script>
-  <script>
-    const lang = detectBrowserLanguage();
-    loadTranslations(lang);
-    document.getElementById('lang-en').addEventListener('click', () => loadTranslations('en'));
-    document.getElementById('lang-ru').addEventListener('click', () => loadTranslations('ru'));
-  </script>
+</footer>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="shader.js"></script>
+<script>
+const translations = {
+    en: {
+        "skills": "Skills",
+        "portfolio": "Portfolio",
+        "contact": "Contact",
+        "skills-title": "Skills",
+        "blender-desc": "3D modeling and animation",
+        "photoshop-desc": "Image editing",
+        "blockbench-desc": "Creating 3D models",
+        "aseprite-desc": "Pixel art and animation",
+        "portfolio-title": "Portfolio",
+        "work1-title": "Work 1",
+        "work1-desc": "3D modeled head",
+        "work2-title": "Work 2",
+        "work2-desc": "3D modeled head",
+        "work3-title": "Work 3",
+        "work3-desc": "3D modeled head",
+        "work4-title": "Work 4",
+        "work4-desc": "Low-poly model (incomplete)",
+        "work5-title": "Work 5",
+        "work5-desc": "3D modeled head",
+        "contact-title": "Contact",
+        "email-title": "Email",
+        "telegram-title": "Telegram",
+        "github-title": "GitHub"
+    },
+    ru: {
+        "skills": "Навыки",
+        "portfolio": "Портфолио",
+        "contact": "Контакты",
+        "skills-title": "Навыки",
+        "blender-desc": "3D моделирование и анимация",
+        "photoshop-desc": "Редактирование изображений",
+        "blockbench-desc": "Создание 3D моделей",
+        "aseprite-desc": "Пиксель-арт и анимация",
+        "portfolio-title": "Портфолио",
+        "work1-title": "Работа 1",
+        "work1-desc": "3D моделированная голова",
+        "work2-title": "Работа 2",
+        "work2-desc": "3D моделированная голова",
+        "work3-title": "Работа 3",
+        "work3-desc": "3D моделированная голова",
+        "work4-title": "Работа 4",
+        "work4-desc": "Низкополигональная модель (не завершена)",
+        "work5-title": "Работа 5",
+        "work5-desc": "3D моделированная голова",
+        "contact-title": "Контакты",
+        "email-title": "Email",
+        "telegram-title": "Telegram",
+        "github-title": "GitHub"
+    }
+};
+
+document.querySelectorAll('.lang-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const lang = this.getAttribute('data-lang');
+        document.querySelectorAll('[data-lang-key]').forEach(element => {
+            const key = element.getAttribute('data-lang-key');
+            element.textContent = translations[lang][key];
+        });
+        document.querySelectorAll('.lang-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+</script>
+<script src="script.js"></script>
 </body>
 </html>
